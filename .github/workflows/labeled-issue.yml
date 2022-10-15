@@ -3,9 +3,9 @@
    issues:
      types:
        - labeled
- 
+ permissions: write-all
  jobs:
-   create_demo_issue:
+   create_issue:
      runs-on: ubuntu-latest
      steps:
        - name: Create issue for blazor
@@ -13,20 +13,18 @@
          uses: dacbd/create-issue-action@v1
          with:
            token:  ${{ secrets.GITHUB_TOKEN }}
-           org: test-web-components
+           owner: test-web-components
            repo: blazor
            title:  ${{ github.event.issue.title }}
            milestone: ${{ github.event.issue.milestone }}
            body: |
              Web Components Planning Issue: ${{ github.event.issue.html_url }}
-       - name: Create issue for angular
+       - name: Create issue for angular diff action
          if: github.event.label.name == 'angular'
-         uses: dacbd/create-issue-action@v1
+         uses: actions-ecosystem/action-create-issue@v1
          with:
-           token:  ${{ secrets.GITHUB_TOKEN }}
-           org: test-web-components
-           repo: angular
+           github_token: ${{ secrets.GITHUB_TOKEN }}
            title:  ${{ github.event.issue.title }}
-           milestone: ${{ github.event.issue.milestone }}
            body: |
              Web Components Planning Issue: ${{ github.event.issue.html_url }}
+           repo: test-web-components/web-components
