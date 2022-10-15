@@ -1,0 +1,32 @@
+ name: Create issues
+ on:
+   issues:
+     types:
+       - labeled
+ 
+ jobs:
+   create_demo_issue:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Create issue for blazor
+         if: github.event.label.name == 'blazor'
+         uses: dacbd/create-issue-action@v1
+         with:
+           token:  ${{ secrets.GITHUB_TOKEN }}
+           org: test-web-components
+           repo: blazor
+           title:  ${{ github.event.issue.title }}
+           milestone: ${{ github.event.issue.milestone }}
+           body: |
+             Web Components Planning Issue: ${{ github.event.issue.html_url }}
+       - name: Create issue for angular
+         if: github.event.label.name == 'angular'
+         uses: dacbd/create-issue-action@v1
+         with:
+           token:  ${{ secrets.GITHUB_TOKEN }}
+           org: test-web-components
+           repo: angular
+           title:  ${{ github.event.issue.title }}
+           milestone: ${{ github.event.issue.milestone }}
+           body: |
+             Web Components Planning Issue: ${{ github.event.issue.html_url }}
