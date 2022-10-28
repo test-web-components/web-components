@@ -12,19 +12,19 @@
          if: github.event.label.name == 'blazor'
          uses: dacbd/create-issue-action@v1
          with:
-           token:  ${{ secrets.GITHUB_TOKEN }}
+           token:  ${{ secrets.ACTIONS_SECRET }}
            owner: test-web-components
            repo: blazor
            title:  ${{ github.event.issue.title }}
            milestone: ${{ github.event.issue.milestone }}
            body: |
              Web Components Planning Issue: ${{ github.event.issue.html_url }}
-       - name: Create issue for angular diff action
+       - name: Create issue for angular action
          if: github.event.label.name == 'angular'
          uses: actions-ecosystem/action-create-issue@v1
          with:
-           github_token: ${{ secrets.GITHUB_TOKEN }}
+           github_token: ${{ secrets.ACTIONS_SECRET }}
            title:  ${{ github.event.issue.title }}
            body: |
              Web Components Planning Issue: ${{ github.event.issue.html_url }}
-           repo: test-web-components/web-components
+           repo: test-web-components/angular
