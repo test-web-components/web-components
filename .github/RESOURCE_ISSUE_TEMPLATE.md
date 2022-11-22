@@ -1,6 +1,6 @@
 ---
 title: "{{ env.RESOURCE }} for {{ payload.issue.title }}"
-labels: "{{ env.RESOURCE }}, {{ payload.issue.label }}"
+labels: "{{ env.RESOURCE }}"
 milestone: "{{ payload.issue.milestone }}"
 ---
 
