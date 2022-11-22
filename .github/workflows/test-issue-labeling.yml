@@ -23,7 +23,7 @@ jobs:
       if: github.event.label.name == ${{ format('Needs {0}', matrix.resource) }}
       uses: JasonEtco/create-an-issue@v2
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN_ISSUES }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         RESOURCE: ${{ matrix.resource }}
       with:
         filename: .github/RESOURCE_ISSUE_TEMPLATE.md
