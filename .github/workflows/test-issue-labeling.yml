@@ -3,11 +3,11 @@ on:
   issues:
     types:
       - labeled
+permissions:
+  contents: read
+  issues: write
 
 jobs:
-  permissions:
-    contents: read
-    issues: write
   create_resource_issue:
     runs-on: ubuntu-latest
     strategy:
