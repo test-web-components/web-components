@@ -1,0 +1,24 @@
+name: Create a demo or docs issue
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  permissions:
+    contents: read
+    issues: write
+  create_resource_issue:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        resource: ['Demo', 'Documentation']
+    if: github.event.label.name == ${{ format('Needs {0}', matrix.resource) }}
+    steps:
+      - name: Create a ${{ matrix.resource }} issue
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_ISSUES }}
+          RESOURCE: ${{ matrix.resource }}
+        with:
+          filename: .github/RESOURCE_ISSUE_TEMPLATE.md
