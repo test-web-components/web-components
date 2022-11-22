@@ -10,14 +10,15 @@ permissions:
 jobs:
 
   create_resource_issue:
+  
     strategy:
       matrix:
         resource: ['Demo', 'Documentation']
     runs-on: ubuntu-latest
 
-    if: github.event.label.name == ${{ format('Needs {0}', matrix.resource) }}
     steps:
     - name: Create a ${{ matrix.resource }} issue
+      if: github.event.label.name == ${{ format('Needs {0}', matrix.resource) }}
       uses: JasonEtco/create-an-issue@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN_ISSUES }}
