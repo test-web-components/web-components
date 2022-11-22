@@ -20,8 +20,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Create a ${{ matrix.resource }} issue
-      if: github.event.label.name == ${{ format('Needds {0}', matrix.resource) }}
       uses: dblock/create-a-github-issue@v3
+      if: github.event.label.name == ${{ format('Needds {0}', matrix.resource) }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         RESOURCE: ${{ matrix.resource }}
