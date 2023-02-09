@@ -21,9 +21,12 @@ jobs:
       uses: actions/checkout@v3
     - name: Create a ${{ matrix.resource }} issue
       if: ${{ github.event.label.name == format('Needs {0}', matrix.resource) }}
-      uses: dblock/create-a-github-issue@v3
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        RESOURCE: ${{ matrix.resource }}
-      with:
-        filename: .github/RESOURCE_ISSUE_TEMPLATE.md
+      uses: dacbd/create-issue-action@v1
+        with:
+          token:  ${{ secrets.GITHUB_TOKEN  }}
+          owner: test-web-components
+          repo: web-components
+          title:  New issue with ${{ github.event.issue.title }}
+          milestone: ${{ github.event.issue.milestone }}
+          body: |
+            Web Components Planning Issue: ${{ github.event.issue.html_url }}

@@ -12,7 +12,7 @@
          if: github.event.label.name == 'blazor'
          uses: dacbd/create-issue-action@v1
          with:
-           token:  ${{ secrets.ACTIONS_SECRET }}
+           token:  ${{ secrets.GITHUB_TOKEN  }}
            owner: test-web-components
            repo: blazor
            title:  ${{ github.event.issue.title }}
@@ -23,8 +23,9 @@
          if: github.event.label.name == 'angular'
          uses: actions-ecosystem/action-create-issue@v1
          with:
-           github_token: ${{ secrets.ACTIONS_SECRET }}
+           github_token: ${{ secrets.GITHUB_TOKEN  }}
            title:  ${{ github.event.issue.title }}
+           milestone: ${{ github.event.issue.milestone }}
            body: |
              Web Components Planning Issue: ${{ github.event.issue.html_url }}
            repo: test-web-components/angular
