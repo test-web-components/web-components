@@ -16,7 +16,6 @@
            owner: test-web-components
            repo: blazor
            title:  ${{ github.event.issue.title }}
-           milestone: ${{ github.event.issue.milestone }}
            body: |
              Web Components Planning Issue: ${{ github.event.issue.html_url }}
        - name: Create issue for angular action
@@ -25,7 +24,6 @@
          with:
            github_token: ${{ secrets.GITHUB_TOKEN  }}
            title:  ${{ github.event.issue.title }}
-           milestone: ${{ github.event.issue.milestone }}
            body: |
              Web Components Planning Issue: ${{ github.event.issue.html_url }}
            repo: test-web-components/angular
