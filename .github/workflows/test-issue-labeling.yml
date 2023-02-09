@@ -22,11 +22,11 @@ jobs:
     - name: Create a ${{ matrix.resource }} issue
       if: ${{ github.event.label.name == format('Needs {0}', matrix.resource) }}
       uses: dacbd/create-issue-action@v1
-        with:
-          token:  ${{ secrets.GITHUB_TOKEN  }}
-          owner: test-web-components
-          repo: web-components
-          title:  New issue with ${{ github.event.issue.title }}
-          milestone: ${{ github.event.issue.milestone }}
-          body: |
-            Web Components Planning Issue: ${{ github.event.issue.html_url }}
+      with:
+        token:  ${{ secrets.GITHUB_TOKEN  }}
+        owner: test-web-components
+        repo: web-components
+        title:  New issue with ${{ github.event.issue.title }}
+        milestone: ${{ github.event.issue.milestone }}
+        body: |
+          Web Components Planning Issue: ${{ github.event.issue.html_url }}
