@@ -27,6 +27,5 @@ jobs:
         owner: test-web-components
         repo: web-components
         title:  New issue with ${{ github.event.issue.title }}
-        milestone: ${{ github.event.issue.milestone }}
         body: |
           Web Components Planning Issue: ${{ github.event.issue.html_url }}
