@@ -1,5 +1,7 @@
 name: 🐞 Bug Report
 description: Create a bug report about something that is not working
+labels: ["Bug"]
+projects: ["telerik/69"]
 body:
 - type: markdown
   attributes:
@@ -37,9 +39,17 @@ body:
     description: A clear and concise description of what you expected to happen.
   validations:
     required: true
-- type: input
+- type: dropdown
   attributes:
     label: Browser
+    multiple: true
+    options:
+      - All
+      - Firefox
+      - Chrome
+      - Microsoft Edge
+      - Safari
+    default: 0
 - type: input
   attributes:
     label: Last working version of Telerik UI for Blazor

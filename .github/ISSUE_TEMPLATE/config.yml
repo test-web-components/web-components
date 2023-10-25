@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Bug Report
+    url:  https://github.com/test-web-components/web-components/issues/new?template=1_bug_report.yml&projects=telerik%2Fweb-components-ux%2F1&labels=enhancement
+    about: Please open issues relating to Razor tooling or the Razor compiler in dotnet/razor.
