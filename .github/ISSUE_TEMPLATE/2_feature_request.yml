@@ -1,0 +1,13 @@
+name: 💡 Feature request
+description: Create a feature request
+body:
+- type: textarea
+  attributes:
+    label: Description
+    description: Add a concise description of the request and any relevant information.
+  validations:
+    required: true  
+- type: textarea
+  attributes:
+    label: Specification
+  

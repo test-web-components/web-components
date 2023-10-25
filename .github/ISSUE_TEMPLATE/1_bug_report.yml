@@ -8,16 +8,23 @@ body:
     value: |
       **Issues Workflow**
       https://github.com/telerik/blazor/wiki/Issues-Workflow
+
       **Prioritization Matrix**
       ![image](https://github.com/telerik/blazor/assets/7159157/d86ea943-3848-4dc0-a73f-7f0d87ed5844)
 - type: input
   attributes:
-    label: Reported Ticket
+    label: Reported in (ticket id)
     description: A link to the ticket with the bug report
 - type: input
   attributes:
     label: Public URL
     description: A link to the feedback portal bug report
+- type: textarea
+  attributes:
+    label: Description
+    description: Add a concise description of the issue and any relevant information.
+  validations:
+    required: true
 - type: textarea
   attributes:
     label: Steps To Reproduce
@@ -49,7 +56,7 @@ body:
       - Chrome
       - Microsoft Edge
       - Safari
-    default: 0
+    default: 1
 - type: input
   attributes:
     label: Last working version of Telerik UI for Blazor
