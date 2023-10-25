@@ -1,0 +1,45 @@
+name: 🐞 Bug Report
+description: Create a bug report about something that is not working
+body:
+- type: markdown
+  attributes:
+    value: |
+      **Issues Workflow**
+      https://github.com/telerik/blazor/wiki/Issues-Workflow
+      **Prioritization Matrix**
+      ![image](https://github.com/telerik/blazor/assets/7159157/d86ea943-3848-4dc0-a73f-7f0d87ed5844)
+- type: input
+  attributes:
+    label: Reported Ticket
+    description: A link to the ticket with the bug report
+- type: input
+  attributes:
+    label: Public URL
+    description: A link to the feedback portal bug report
+- type: textarea
+  attributes:
+    label: Steps To Reproduce
+    description: |
+      Include:
+      - a demo, or [blazor repl (repro)](https://blazorrepl.telerik.com/).
+      - concise steps to replicate the issue
+    validations:
+      required: true
+- type: textarea
+  attributes:
+    label: Expected Behavior
+    description: A clear and concise description of what you expected to happen.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Expected Behavior
+    description: A clear and concise description of what you expected to happen.
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Browser
+- type: input
+  attributes:
+    label: Last working version of Telerik UI for Blazor
