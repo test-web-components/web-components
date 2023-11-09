@@ -5,7 +5,7 @@ projects: ["telerik/69"]
 body:
 - type: markdown
   attributes:
-    description: |
+    value: |
       [Issues Workflow](https://github.com/telerik/blazor/wiki/Issues-Workflow)
 
       **Matrix**
