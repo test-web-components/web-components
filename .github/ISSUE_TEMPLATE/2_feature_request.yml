@@ -1,5 +1,5 @@
 name: 💡 Feature request
-description: Create a feature request
+description: Create a feature request for the suite.
 body:
 - type: textarea
   attributes:
@@ -7,7 +7,4 @@ body:
     description: Add a concise description of the request and any relevant information.
   validations:
     required: true  
-- type: textarea
-  attributes:
-    label: Specification
   

@@ -1,24 +1,46 @@
 name: 🐞 Bug Report
-description: Create a bug report about something that is not working
+description: Create a bug report about something that is not working.
 labels: ["Bug"]
 projects: ["telerik/69"]
 body:
 - type: markdown
   attributes:
-    value: |
-      **Issues Workflow**
-      https://github.com/telerik/blazor/wiki/Issues-Workflow
+    description: |
+      [Issues Workflow](https://github.com/telerik/blazor/wiki/Issues-Workflow)
 
-      **Prioritization Matrix**
+      **Matrix**
+
+      > Regression priority is **20**.
+
       ![image](https://github.com/telerik/blazor/assets/7159157/d86ea943-3848-4dc0-a73f-7f0d87ed5844)
+
+      <details>
+      <summary>⬇️ Severity Table Guide</summary>
+      |Severity|Definition(examples in wiki)|
+      |Blocking|A defect that completely blocks developing and testing of the product/feature or prevents releasing the product. There is no workaround.|
+      |Critical|A defect that completely hampers the major functionalities of a widget. There is no workaround.|
+      |High|A defect in a major widget feature, causing it to behave differently than expected. It could lead to incorrect data persistence, data issues or wrong widget behaviors. There may be a workaround, but it is not obvious.|
+      |Medium|A defect causing a widget feature to behave differently than expected but the impact is negligible to some extent or it doesn't have a major impact on widget's usage.|
+      |Low|Any visual defects including spelling mistakes or alignment issues or font casing. No major functionality is affected. In terms of functionality, it is not affecting anything so we can mark as Low Severity. But since it has an impact on user experience, it may be fixed with higher frequency.|
+      </details>
+
+      <details>
+      <summary>⬇️ Frequency Table Guide</summary>
+      |Frequency|Definition(examples in wiki)|
+      |Certain|Default configuration of a component is not working. Everyone who is using a feature will encounter the issue.|
+      |Likely|Important(key features) configuration of a component is not working, but require steps for reproduction|
+      |Possible|The issue is related to several configuration options combined. (Look at it like many if statements in a reproduction guide)|
+      |Rare|The issue is related to a corner case, or a particular combination of parameters with a specific not popular browser.|
+      </details>
+
 - type: input
   attributes:
     label: Reported in (ticket id)
-    description: A link to the ticket with the bug report
+    description: A link to the ticket with the bug report.
 - type: input
   attributes:
     label: Public URL
-    description: A link to the feedback portal bug report
+    description: A link to the feedback portal bug report.
 - type: textarea
   attributes:
     label: Description
@@ -59,4 +81,4 @@ body:
     default: 1
 - type: input
   attributes:
-    label: Last working version of Telerik UI for Blazor
+    label: Last working version of Telerik UI for Blazor (if regression)
